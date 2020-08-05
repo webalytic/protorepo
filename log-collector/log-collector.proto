@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+service LogCollector {
+  rpc collect (CollectRequest) returns (CollectResponse);
+}
+
+message CollectRequest {
+  message Product {
+    string productSKU = 1;
+    string productName = 2;
+    string productBrand = 3;
+    string productCategory = 4;
+    string productVariant = 5;
+    int32 productPrice = 6;
+    int32 productQuantity = 7;
+    string productCouponCode = 8;
+  }
+
+  message Hit {
+    string time = 1;
+    string type = 2;
+    string dataSource = 3;
+
+    // ** Pageview
+    string pageUrl = 4;
+
+    // ** Events
+    string eventCategory = 5;
+    string eventAction = 6;
+    string eventLabel = 7;
+    int32 eventValue = 8;
+
+    // ** Enhanced E-Commerce
+    string transactionId = 9;
+    string transactionAffiliation = 10;
+    int32 transactionRevenue = 11;
+    string productAction =  12;
+    repeated Product products = 13;
+  }
+
+  // ** General
+  string resourceId = 1;
+
+  // ** User
+  string clientId = 2;
+  string userId = 3;
+
+   // ** Session
+  string sessionControl = 4;
+  string ip = 5;
+  string userAgent = 6;
+
+  // ** Traffic Sources
+  string documentReferrer = 7;
+  string campaignName = 8;
+  string campaignSource = 9;
+  string campaignMedium = 10;
+  string campaignKeyword = 11;
+  string campaignContent = 12;
+  string campaignId = 13;
+
+  // ** System Info
+  string screenResolution = 14;
+  string viewportSize = 15;
+   
+  // ** Hit
+  Hit hit = 16;
+
+  // ** Content Information
+  string documentLocation = 17;
+}
+
+message CollectResponse {
+  int32 status = 1;
+}
