@@ -9,6 +9,6 @@ message LookUpRequest {
 }
 
 message LookUpResponse {
-  string Country = 1;
-  string City = 2;  
+  string country = 1;
+  string city = 2;  
 }
