@@ -52,7 +52,7 @@ message CollectRequest {
 
   // ** Traffic Sources
   string document_referrer = 7;
-  string campaign_mame = 8;
+  string campaign_name = 8;
   string campaign_source = 9;
   string campaign_medium = 10;
   string campaign_keyword = 11;
