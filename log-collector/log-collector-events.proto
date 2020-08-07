@@ -1,10 +1,6 @@
 syntax = "proto3";
 
-service LogCollector {
-  rpc collect (CollectRequest) returns (CollectResponse);
-}
-
-message CollectRequest {
+message LogCollectedEventPayload {
   message Product {
     string product_sku = 1;
     string product_name = 2;
@@ -35,7 +31,7 @@ message CollectRequest {
     string transaction_affiliation = 10;
     int32 transaction_revenue = 11;
     string product_action =  12;
-    repeated Product products = 13;
+    repeated Product productsList = 13;
   }
 
   // ** General
@@ -68,8 +64,4 @@ message CollectRequest {
 
   // ** Content Information
   string document_location = 17;
-}
-
-message CollectResponse {
-  int32 status = 1;
 }
