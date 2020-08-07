@@ -1,39 +1,8 @@
 syntax = "proto3";
 
+import public "shared/shared.proto";
+
 message LogCollectedEventPayload {
-  message Product {
-    string product_sku = 1;
-    string product_name = 2;
-    string product_brand = 3;
-    string product_category = 4;
-    string product_variant = 5;
-    int32 product_price = 6;
-    int32 product_quantity = 7;
-    string product_coupon_code = 8;
-  }
-
-  message Hit {
-    string time = 1;
-    string type = 2;
-    string data_source = 3;
-
-    // ** Pageview
-    string page_url = 4;
-
-    // ** Events
-    string event_category = 5;
-    string event_action = 6;
-    string event_label = 7;
-    int32 event_value = 8;
-
-    // ** Enhanced E-Commerce
-    string transaction_id = 9;
-    string transaction_affiliation = 10;
-    int32 transaction_revenue = 11;
-    string product_action =  12;
-    repeated Product productsList = 13;
-  }
-
   // ** General
   string resource_id = 1;
 
@@ -59,9 +28,9 @@ message LogCollectedEventPayload {
   string screen_resolution = 14;
   string viewport_size = 15;
    
-  // ** Hit
-  Hit hit = 16;
-
   // ** Content Information
-  string document_location = 17;
+  string document_location = 16;
+
+  // ** Hit
+  shared.Hit hit = 17;
 }
