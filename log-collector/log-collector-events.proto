@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import public "shared/shared.proto";
+import public "shared/session.proto";
 
 message LogCollectedEventPayload {
   // ** General
@@ -32,5 +32,5 @@ message LogCollectedEventPayload {
   string document_location = 16;
 
   // ** Hit
-  shared.Hit hit = 17;
+  session.Hit hit = 17;
 }

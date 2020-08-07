@@ -1,14 +1,14 @@
 syntax = "proto3";
 
-import public "shared/shared.proto";
+import public "shared/session.proto";
 
 message SessionCreatedEventPayload {
-  shared.Hit hit = 1;
-  shared.SessionProps props = 2;
+  session.Hit hit = 1;
+  session.SessionProps props = 2;
 }
 
 message SessionUpdatedEventPayload {
-  shared.Hit hit = 1;
-  shared.SessionProps props = 2;
-  shared.SessionProps prevProps = 3;
+  session.Hit hit = 1;
+  session.SessionProps props = 2;
+  session.SessionProps prevProps = 3;
 }
