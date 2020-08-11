@@ -25,7 +25,7 @@ message CreateResourceRequest {
   resource.CreateResourceInput data = 1;
 }
 
-message CreateResourceRespones {
+message CreateResourceResponse {
   resource.ResourceProps instance = 1;
 }
 
