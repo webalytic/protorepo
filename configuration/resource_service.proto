@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import public "shared/resource.proto";
+import public "configuration/resource.proto";
 
 service ResourceService {
   rpc ListResources (ListResourcesRequest) returns (ListResourcesResponse);

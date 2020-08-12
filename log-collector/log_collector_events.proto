@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import public "shared/session.proto";
+import public "log-processing/session.proto";
 
 message LogCollectedEventPayload {
   // ** General
