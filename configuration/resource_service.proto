@@ -17,7 +17,7 @@ message ListResourcesRequest {
 
 message ListResourcesResponse {
   repeated resource.ResourceProps resources = 1;
-  string count = 2;
+  int32 count = 2;
   string cursor = 3;
 }
 
