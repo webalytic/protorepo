@@ -4,8 +4,8 @@ import public "configuration/resource.proto";
 
 service ResourceService {
   rpc ListResources (ListResourcesRequest) returns (ListResourcesResponse);
-  rpc CreateResource (CreateResourceRequest) returns (resource.ResourceProps);
-  rpc UpdateResource (UpdateResourceRequest) returns (resource.ResourceProps);
+  rpc CreateResource (CreateResourceRequest) returns (CreateResourceResponse);
+  rpc UpdateResource (UpdateResourceRequest) returns (UpdateResourceResponse);
 }
 
 message ListResourcesRequest {
