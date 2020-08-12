@@ -2,13 +2,15 @@ syntax = "proto3";
 
 package resource;
 
+import "google/protobuf/timestamp.proto";
+
 message ResourceProps { 
   string id = 1;
   string name = 2;
   ResourceCategory category = 3;
   string default_website_url = 4;
-  string create_at = 5;
-  string update_at = 6;
+  google.protobuf.Timestamp create_time = 5;
+  google.protobuf.Timestamp update_time = 6;
 }
 
 message CreateResourceInput { 
