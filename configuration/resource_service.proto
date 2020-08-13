@@ -11,14 +11,13 @@ service ResourceService {
 message ListResourcesRequest {
   resource.ResourceFilter filter = 1; 
   int32 limit = 2;
-  string cursor = 3;
-  string order_by = 4; // Example: 'id desc' or 'id asc,name desc'
+  int32 offset = 3;
+  string order_by = 4; // Example: 'id desc' or 'id:asc,name:desc'
 }
 
 message ListResourcesResponse {
   repeated resource.ResourceProps resources = 1;
   int32 count = 2;
-  string cursor = 3;
 }
 
 message CreateResourceRequest {
