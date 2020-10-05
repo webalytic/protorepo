@@ -45,6 +45,7 @@ message SessionProps {
   int32 duration = 11;
   repeated CustomDimension custom_dimensions = 12;
   repeated CustomMetric custom_metrics = 13;
+  uint32 session_start_timestamp = 14;
 }
 
 message Product {
@@ -82,6 +83,9 @@ message Hit {
   // ** Custom dimensions and metrics
   repeated CustomDimension custom_dimensions = 14;
   repeated CustomMetric custom_metrics = 15;
+
+  // ** Replacement of old time field
+  uint32 timestamp = 16;
 }
 
 message CustomDimension {
